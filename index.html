@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#24142f" />
+  <meta name="description" content="A little apology, made with love, for Meenuuu." />
+  <title>For Meenuuu 💗 | A little apology</title>
+  <style>
+    :root { color-scheme: dark; --bg:#1a1026; --ink:#fff6fc; --muted:#dcc4db; --pink:#ffa9cf; --hot:#ff6baf; --lav:#cbb8ff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-height:100vh; font-family: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif; color:var(--ink); background: radial-gradient(ellipse at 20% 10%, #553152 0%, transparent 45%), radial-gradient(ellipse at 90% 80%, #383069 0%, transparent 48%), var(--bg); overflow-x:hidden; }
+    .stars { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0; }
+    .star { position:absolute; opacity:.45; color:#ffe5f5; animation:floatUp var(--duration,8s) linear infinite; font-size:var(--size,15px); left:var(--left,50%); top:110%; animation-delay:var(--delay,0s); }
+    @keyframes floatUp { to { transform:translate(var(--drift,20px),-125vh) rotate(120deg); opacity:0; } }
+    .shell { width:min(100% - 28px, 660px); margin:auto; position:relative; z-index:1; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:50px 0 32px; }
+    .eyebrow { font-size:12px; font-weight:800; letter-spacing:.24em; text-transform:uppercase; color:#f8bfdc; margin:0 0 12px; text-align:center; }
+    h1 { font-family:Georgia, 'Times New Roman', serif; font-size:clamp(38px,8vw,62px); line-height:1.08; letter-spacing:-.04em; text-align:center; font-weight:normal; margin:0; }
+    h1 span { color:#ffb6dc; font-style:italic; }
+    .subtitle { color:var(--muted); text-align:center; line-height:1.6; font-size:15px; margin:15px 0 25px; max-width:425px; }
+    .card { position:relative; width:100%; border:1px solid rgba(255,218,240,.22); border-radius:30px; background:linear-gradient(155deg,rgba(255,255,255,.11),rgba(255,255,255,.035)); box-shadow:0 28px 100px rgba(8,0,20,.36), inset 0 1px 0 rgba(255,255,255,.1); backdrop-filter:blur(14px); padding:clamp(22px,5vw,44px); text-align:center; overflow:hidden; }
+    .card::before { content:""; position:absolute; width:260px; height:260px; background:#ff88c5; opacity:.08; filter:blur(55px); top:-170px; right:-60px; pointer-events:none; }
+    .panel { display:none; animation:reveal .6s ease both; }
+    .panel.active { display:block; }
+    @keyframes reveal { from { opacity:0; transform:translateY(12px) scale(.98); } to { opacity:1; transform:translateY(0) scale(1); } }
+    .envelope-button { background:transparent; border:0; padding:10px; cursor:pointer; display:block; margin:0 auto 22px; -webkit-tap-highlight-color:transparent; }
+    .envelope-button:focus-visible, button:focus-visible { outline:3px solid #ffd2ed; outline-offset:5px; }
+    .envelope { width:min(260px,65vw); height:174px; position:relative; filter:drop-shadow(0 20px 16px rgba(11,0,18,.3)); transition:transform .3s; }
+    .envelope-button:hover .envelope { transform:translateY(-6px) rotate(-2deg); }
+    .env-back { position:absolute; inset:0; background:#f7aacb; border-radius:10px; }
+    .env-paper { position:absolute; width:78%; height:80%; left:11%; bottom:10%; background:#fff3f8; border-radius:7px; transform:translateY(-18px); display:grid; place-items:center; font-family:Georgia,serif; font-size:22px; color:#a44876; }
+    .env-front { position:absolute; inset:0; background:#ffbad7; clip-path:polygon(0 12%,50% 64%,100% 12%,100% 100%,0 100%); border-radius:9px; }
+    .env-flap { position:absolute; inset:0; background:#ffd1e3; clip-path:polygon(0 0,100% 0,50% 62%); transform-origin:50% 0; transition:transform .7s; }
+    .envelope-button:hover .env-flap { transform:rotateX(35deg); }
+    .seal { position:absolute; top:48%; left:50%; transform:translate(-50%,-50%); width:42px; height:42px; background:#d95791; border-radius:50%; display:grid; place-items:center; font-size:23px; box-shadow:0 4px 12px #b539704d; }
+    .hint { color:#e9cde0; font-size:13px; letter-spacing:.05em; }
+    h2 { font-family:Georgia,serif; font-size:clamp(28px,6vw,39px); line-height:1.18; font-weight:normal; margin:12px 0 18px; }
+    .heart-icon { font-size:42px; display:block; animation:heartbeat 1.8s ease-in-out infinite; }
+    @keyframes heartbeat { 0%,100%{transform:scale(1)} 15%{transform:scale(1.16)} 30%{transform:scale(1)} 45%{transform:scale(1.08)} }
+    .letter { text-align:left; line-height:1.85; font-size:clamp(15px,3.2vw,17px); color:#f7e8f3; max-width:485px; margin:auto; }
+    .letter p { margin:0 0 16px; }
+    .letter strong { color:#ffd0e8; }
+    .signoff { color:#ffc7e1; font-family:Georgia,serif; font-size:20px; font-style:italic; text-align:right; margin-top:12px; }
+    .button { display:inline-flex; justify-content:center; align-items:center; gap:9px; padding:14px 21px; border-radius:999px; border:1px solid #ffd2e680; color:#281329; background:linear-gradient(105deg,#ffd3e8,#ffa5cf); font-size:14px; font-weight:800; cursor:pointer; box-shadow:0 8px 22px rgba(255,110,176,.2); transition:transform .2s,box-shadow .2s; font-family:inherit; margin-top:15px; }
+    .button:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(255,110,176,.28); }
+    .button.secondary { color:#ffdeee; background:rgba(255,255,255,.07); box-shadow:none; }
+    .actions { display:flex; gap:10px; justify-content:center; align-items:center; flex-wrap:wrap; }
+    .cake { font-size:clamp(75px,17vw,116px); margin:18px 0; filter:drop-shadow(0 16px 23px #0004); animation:bob 3s ease-in-out infinite; }
+    @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .wish { font-family:Georgia,serif; font-size:clamp(21px,5vw,30px); color:#ffd0e8; line-height:1.4; margin:10px 0; }
+    .small { color:var(--muted); font-size:14px; line-height:1.7; max-width:430px; margin:16px auto 0; }
+    .foot { font-size:12px; color:#cbb3cc; text-align:center; margin:24px 0 0; }
+    #confetti { position:fixed; inset:0; pointer-events:none; z-index:3; overflow:hidden; }
+    .confetto { position:absolute; top:-22px; width:10px; height:17px; animation:fall var(--fall,3.5s) ease-in forwards; opacity:.95; }
+    @keyframes fall { 100% { transform:translate(var(--shift,30px),105vh) rotate(var(--rot,780deg)); opacity:.35; } }
+    @media(max-width:420px){.card{border-radius:24px}.shell{padding-top:35px}.button{width:100%}.actions{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important} .stars{display:none}}
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div id="confetti" aria-hidden="true"></div>
+  <main class="shell">
+    <p class="eyebrow">a tiny corner of the internet, just for you</p>
+    <h1>Dear <span>Meenuuu</span> 💗</h1>
+    <p class="subtitle">I made something I should have said properly, a lot sooner. No pressure—just a message from my heart.</p>
+    <article class="card">
+      <section class="panel active" id="start" aria-label="Open the letter">
+        <button class="envelope-button" id="openLetter" aria-label="Open apology letter">
+          <div class="envelope" aria-hidden="true"><div class="env-back"></div><div class="env-paper">For Meenuuu ♡</div><div class="env-front"></div><div class="env-flap"></div><div class="seal">♥</div></div>
+        </button>
+        <h2>A little letter for you</h2>
+        <p class="hint">Tap the envelope to open it 💌</p>
+        <button class="button" id="openButton">Open my letter ✨</button>
+      </section>
+      <section class="panel" id="letterPanel" aria-label="Apology letter">
+        <span class="heart-icon" aria-hidden="true">💗</span>
+        <h2>I'm really sorry, Meenuuu.</h2>
+        <div class="letter">
+          <p>I know I missed your birthday, and I understand why that hurt. Your special day deserved love, attention, and a wish from me. <strong>I let you down.</strong></p>
+          <p>I don't want to make excuses or act like it was a small thing. I wish I had made you feel celebrated the way you deserve.</p>
+          <p><strong>Happy belated birthday, my Meenuuu. 🎂</strong> I hope this new year of your life brings you laughter, peace, beautiful surprises, and everything your heart wishes for.</p>
+          <p>I miss talking to you. If you're comfortable, I'd be grateful for a chance to listen, apologize properly, and make things right through my actions. <strong>You don't owe me a reply, and I'll respect your space.</strong></p>
+          <p>No matter what, you matter so much to me. 💕</p>
+          <p class="signoff">With love and a sincere sorry ♡</p>
+        </div>
+        <div class="actions"><button class="button" id="surpriseButton">One tiny birthday surprise 🎁</button></div>
+      </section>
+      <section class="panel" id="surprisePanel" aria-label="Belated birthday wish">
+        <p class="eyebrow">a wish, even if it's late</p>
+        <div class="cake" role="img" aria-label="Birthday cake">🎂</div>
+        <h2>Happy belated birthday,<br>Meenuuu! 🥹💖</h2>
+        <p class="wish">I missed the date.<br>I don't want to miss the chance to be better.</p>
+        <p class="small">Whenever you're ready, I'd love to talk again. If you decide to unblock me, I'll be here to listen. And if you need more time, I understand. 🌷</p>
+        <div class="actions"><button class="button" id="celebrateButton">Send a shower of love 💞</button><button class="button secondary" id="backButton">Read my letter again ↩</button></div>
+      </section>
+    </article>
+    <p class="foot">Made with love, with no expectations. ♡</p>
+  </main>
+  <script>
+    const panels = document.querySelectorAll('.panel');
+    function show(id){ panels.forEach(p => p.classList.toggle('active',p.id===id)); }
+    function goLetter(){ show('letterPanel'); }
+    document.getElementById('openLetter').addEventListener('click',goLetter);
+    document.getElementById('openButton').addEventListener('click',goLetter);
+    document.getElementById('surpriseButton').addEventListener('click',()=>{show('surprisePanel'); burst();});
+    document.getElementById('backButton').addEventListener('click',goLetter);
+    document.getElementById('celebrateButton').addEventListener('click',burst);
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!reduced){
+      const stars=document.getElementById('stars');
+      const symbols=['♡','✦','♥','✧'];
+      for(let i=0;i<24;i++){
+        const s=document.createElement('span');s.className='star';s.textContent=symbols[i%symbols.length];
+        s.style.setProperty('--left',Math.random()*100+'%');s.style.setProperty('--delay',-Math.random()*12+'s');
+        s.style.setProperty('--duration',7+Math.random()*9+'s');s.style.setProperty('--size',10+Math.random()*15+'px');
+        s.style.setProperty('--drift',(Math.random()-.5)*180+'px');stars.appendChild(s);
+      }
+    }
+    function burst(){
+      if(reduced)return;
+      const layer=document.getElementById('confetti');const colors=['#ff9dcd','#ffd4e9','#c4b5fd','#ffdf8e','#fff2fb'];
+      for(let i=0;i<75;i++){
+        const piece=document.createElement('span');piece.className='confetto';
+        piece.style.left=Math.random()*100+'%';piece.style.background=colors[i%colors.length];
+        piece.style.borderRadius=i%3===0?'50%':'2px';piece.style.setProperty('--fall',2.3+Math.random()*2.5+'s');
+        piece.style.setProperty('--shift',(Math.random()-.5)*220+'px');piece.style.setProperty('--rot',(400+Math.random()*900)+'deg');
+        layer.appendChild(piece);setTimeout(()=>piece.remove(),5100);
+      }
+    }
+  </script>
+</body>
+</html>
